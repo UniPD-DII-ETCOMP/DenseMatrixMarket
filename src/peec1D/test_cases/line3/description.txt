@@ -1,0 +1,2 @@
+Problem description:
+1m long short-circuited two-wire line. Each wire excited by a current generator on one end.
