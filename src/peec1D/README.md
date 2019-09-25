@@ -1,4 +1,4 @@
-#PEEC 1D by Riccardo Torchio (riccardo.torchio@studenti.unipd.it)
+# PEEC 1D by Riccardo Torchio (riccardo.torchio@studenti.unipd.it)
 
 This directory contains a PEEC code, based on stick elements, for the solution of full-wave electromagnetic problems.
 
