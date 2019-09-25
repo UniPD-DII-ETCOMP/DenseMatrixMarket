@@ -56,7 +56,6 @@ disp([num2str(freq) ' [Hz]'])
 disp([num2str(nSticks) ' stick elements'])
 disp([num2str(N.vol_sou) ' appended branches'])
 disp([num2str(N.cur_sou) ' injected currents'])
-disp(['N.B.: imposed currents are not supported'])
 disp('------------------------------------')
 %% pre-processing
 disp('------------------------------------')
