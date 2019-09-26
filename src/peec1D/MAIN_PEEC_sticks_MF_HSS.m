@@ -104,7 +104,7 @@ err=100*norm(x-x_fromHSS)/norm(x);
 disp(['Solution perc. error =',num2str(err),'%'])
 disp(['Relative residual =',num2str(100*norm(M*x-b)/norm(b)),'%']);
 %%
-gtoc = toc(gtic) %global TOC
+gtoc = toc(gtic); %global TOC
 %%
  
 
