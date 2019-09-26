@@ -1,4 +1,4 @@
-<img src="docs/hss.png" width="200" height="200"> # Dense Matrix Market ([Authors contact](docs/contacts.md))
+# Dense Matrix Market ([Authors contact](docs/contacts.md)) <img src="docs/hss.png" width="200" height="200"> 
 
 The purpose of this repository is twofold:
 
