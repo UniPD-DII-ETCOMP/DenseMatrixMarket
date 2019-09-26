@@ -1,4 +1,4 @@
-![HSS compression](docs/hss.png)
+![HSS compression](docs/hss.png | width=200)
 # Dense Matrix Market ([Authors contact](docs/contacts.md))
 
 The purpose of this repository is twofold:
