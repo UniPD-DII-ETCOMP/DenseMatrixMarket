@@ -9,7 +9,7 @@ if exist('hm-toolbox-master','dir')
     if strcmp(texthss,'% mod_by_RT')
         disp('modified hss.m file detected')
     else
-        error('move low_rank/hss.m file to hm-toolbox-master/hm-toolbox-master/@hss ')
+        error('copy lowrank/hss.m file to hm-toolbox-master/@hss ')
     end
 else
     error('Download hm-toolbox from https://github.com/numpi/hm-toolbox and extract it') 
