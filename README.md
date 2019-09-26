@@ -1,5 +1,6 @@
 # Dense Matrix Market
 
+# [Autors contact](docs/contacts.md)
 The purpose of this repository is twofold:
 
 1. [Provide sample Matlab PEEC codes for a variety of geometric elements](docs/sample.md)
