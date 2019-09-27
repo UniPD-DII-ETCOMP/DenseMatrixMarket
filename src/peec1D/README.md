@@ -40,7 +40,7 @@ BEGIN USER SETTINGS / END USER SETTINGS comments.
 
 Available test cases
 --------------------
-6 test cases are contained in separate directories under "test_cases". Each directory contains a description.txt file.
+Several test cases are contained in separate directories under "test_cases". Each directory contains a description.txt file.
 Set the "test_case_dir" variable in "MAIN_PEEC_sticks_MF.m" to the appriapriate directory.
 
 User-defined test cases
