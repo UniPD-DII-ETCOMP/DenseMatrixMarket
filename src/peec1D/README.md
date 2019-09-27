@@ -2,12 +2,15 @@
 
 This directory contains a PEEC code, based on stick elements, for the solution of full-wave electromagnetic problems.
 
+An optimized, paralle, fortran90 version of this code has been used in
+
+
 In this code, the PEEC system of equations is assembled in its reduced form where currents 
 only are considered as unknowns:
 
 [R+1j*w*L+(1/(1j*w*)A^T*P*A)j=e 
 
-see [1] for more details and consider citing it.
+see the above references for more details and consider citing it.
 
 In this code only conductive media modeled by thin 1D (a.k.a "stick") elements are 
 considered.
@@ -41,8 +44,5 @@ User-defined test cases
 Follow the instuctions given in "README.txt" inside the "test_cases" directory.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Reference:
 
-[1] R. Torchio, "A Volume PEEC Formulation Based on the Cell Method for Electromagnetic Problems from Low to High Frequency," in IEEE Transactions on Antennas and Propagation.
-doi: 10.1109/TAP.2019.2927789
 URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8764572&isnumber=4907023
