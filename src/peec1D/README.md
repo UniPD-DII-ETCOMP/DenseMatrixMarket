@@ -12,7 +12,7 @@ An optimized, parallel (OpenMP), fortran90 version of this code has been used in
 In this code, the PEEC system of equations is assembled in its reduced form where currents 
 only are considered as unknowns:
 
-[R+1j*w*L+(1/(1j*w*)A^T*P*A)j=e 
+[R+1j*\omega*L+(1/(1j*w*)A^T*P*A)j=e 
 
 see the above references for more details and consider citing it.
 
