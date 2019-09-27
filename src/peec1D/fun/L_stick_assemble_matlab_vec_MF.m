@@ -11,7 +11,7 @@ L=zeros(length(hhout),length(kk));
 
 %%
 hhh=1;
-for hh=hhout
+for hh=hhout(1):hhout(end)
     PPgh=PPghtot(:,:,hh);
     ll_h=ll_htot(hh);
     ut_h=ut_htot(:,hh);
@@ -40,7 +40,8 @@ L=1.0d-7*0.5*L;
 %%
 [C,IA,IB] = intersect(hhout,kk);
 hhh=1;
-    for hh=C
+if ~isempty(C)
+    for hh=C(1):C(end)
     %self-inductance
         ll_h=ll_htot(hh);
         aa=log(ll_h/radius(hh)+sqrt((ll_h/radius(hh))^2+1));
@@ -49,6 +50,7 @@ hhh=1;
         L(IA(hhh),IB(hhh))=1.0d-7*2*ll_h*(aa-bb+cc+(Wint)*0.25);
         hhh=hhh+1;
     end
+end
 end 
 
 

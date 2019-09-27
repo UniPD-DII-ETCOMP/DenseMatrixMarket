@@ -7,7 +7,7 @@ P=zeros(length(hhout),length(kk));
 %%
 % return
 hhh=1;
-for hh=hhout
+for hh=hhout(1):hhout(end)
     ne_cap_hh=Cap_Elem(1,hh); % numero di elementi del nofor hh
     ll_tot_hh=ll_tot_xx(hh).';
 %     kk=hh+1:nNodes;
@@ -38,7 +38,7 @@ end
 [C,IA,IB] = intersect(hhout,kk);
 hhh=1;
 if ~isempty(C)
-for hh=C
+for hh=C(1):C(end)
     ne_cap_hh=Cap_Elem(1,hh);
     idE_hh=Cap_Elem(2:ne_cap_max+1,hh);
     P_self_jj_jj=0.0d0;
