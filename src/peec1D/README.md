@@ -2,7 +2,7 @@
 
 This directory contains a PEEC code, based on stick elements, for the solution of full-wave electromagnetic problems.
 
-An optimized, paralle, fortran90 version of this code has been used in
+An optimized, parallel (OpenMP), fortran90 version of this code has been used in
 
 * [P. Baumgartner, T. Bauernfeind, O. Bíró, A. Hackl, C. Magele, W. Renhart and Riccardo Torchio, "Multi-Objective Optimization of Yagi-Uda Antenna Applying Enhanced Firefly Algorithm With Adaptive Cost Function," in IEEE Transactions on Magnetics. doi: 10.1109/TMAG.2017.2764319](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8168407&isnumber=4479871)
 * [T. Bauernfeind, P. Baumgartner, O. Bíró, A. Hackl, C. Magele, W. Renhart and Riccardo Torchio, "Multi-Objective Synthesis of NFC-Transponder Systems Based on PEEC Method," in IEEE Transactions on Magnetics. doi: 10.1109/TMAG.2017.2771366](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8125565&isnumber=4479871)
