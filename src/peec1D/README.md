@@ -4,6 +4,10 @@ This directory contains a PEEC code, based on stick elements, for the solution o
 
 An optimized, paralle, fortran90 version of this code has been used in
 
+* [P. Baumgartner, T. Bauernfeind, O. Bíró, A. Hackl, C. Magele, W. Renhart and Riccardo Torchio, "Multi-Objective Optimization of Yagi-Uda Antenna Applying Enhanced Firefly Algorithm With Adaptive Cost Function," in IEEE Transactions on Magnetics. doi: 10.1109/TMAG.2017.2764319](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8168407&isnumber=4479871)
+* [T. Bauernfeind, P. Baumgartner, O. Bíró, A. Hackl, C. Magele, W. Renhart and Riccardo Torchio, "Multi-Objective Synthesis of NFC-Transponder Systems Based on PEEC Method," in IEEE Transactions on Magnetics. doi: 10.1109/TMAG.2017.2771366](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8125565&isnumber=4479871)
+* [R. Torchio, P. Bettini and P. Alotto, "PEEC-Based Analysis of Complex Fusion Magnets During Fast Voltage Transients With H-Matrix Compression," in IEEE Transactions on Magnetics. doi: 10.1109/TMAG.2017.2651638](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7814211&isnumber=7934107)
+
 
 In this code, the PEEC system of equations is assembled in its reduced form where currents 
 only are considered as unknowns:
@@ -15,7 +19,7 @@ see the above references for more details and consider citing it.
 In this code only conductive media modeled by thin 1D (a.k.a "stick") elements are 
 considered.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-------------------------------------------------------------------
 
 % Description
  
@@ -32,7 +36,7 @@ MAIN_PEEC_sticks_MF.m is the main file you must run to start the code.
 
 All user-settable quantities, e.g. frequency and resistivity, are contained in the block identified by the 
 BEGIN USER SETTINGS / END USER SETTINGS comments.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-------------------------------------------------------------------
 
 Available test cases
 --------------------
@@ -43,6 +47,4 @@ User-defined test cases
 -----------------------
 Follow the instuctions given in "README.txt" inside the "test_cases" directory.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8764572&isnumber=4907023
