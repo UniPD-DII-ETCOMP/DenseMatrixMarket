@@ -33,6 +33,18 @@ MAIN_PEEC_sticks_MF.m is the main file you must run to start the code.
                       https://github.com/klho/FLAM/
                       The varibale "barDoFs" contains the barycenters
                       related to the Degrees of Freedom, i.e. stick currents (and other lumped circuit currents)
+                      
+MAIN_PEEC_sticks_MF_HSS.m is the main file you must run to start the code coupled with 
+                          the low rank compression library https://github.com/numpi/hm-toolbox 
+                          based on HODLR and HSS. 
+                          Follow the instruction in *** to download and set up the compression library.
+                          HSS and HODLR methods can be used o compress the PEEC matrix.
+                          Note that the compression performances are higly problem dependent
+                          and the compression may be very poor without a proper reordering 
+                          of the DoFs.
+                     
+                                                
+                      
 
 All user-settable quantities, e.g. frequency and resistivity, are contained in the block identified by the 
 BEGIN USER SETTINGS / END USER SETTINGS comments.
@@ -41,7 +53,7 @@ BEGIN USER SETTINGS / END USER SETTINGS comments.
 Available test cases
 --------------------
 Several test cases are contained in separate directories under "test_cases". Each directory contains a description.txt file.
-Set the "test_case_dir" variable in "MAIN_PEEC_sticks_MF.m" to the appriapriate directory.
+Set the "test_case_dir" variable in "MAIN_PEEC_sticks_MF.m" and "MAIN_PEEC_sticks_MF_HSS.m" to the appriapriate directory.
 
 User-defined test cases
 -----------------------
