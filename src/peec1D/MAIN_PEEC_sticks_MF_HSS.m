@@ -26,7 +26,7 @@ ret = 1; %consider retarded potentials (1 = yes, 0 = no)
 Wint = 1; %consider internal energy of wires for the self inductance computation (1 = yes, 0 = no)
 np_gauss = 2; % number of gauss points for the numerical integration
 E_external = 0; % external electric field (1 = yes, 0 = no)
-% External field (only active if E_external==1)
+% External field (active if E_external==1)
 E_ext=@(x,y,z) [(y-0.5),-(x-0.5),0]; % set the external electric field distribution
 % END USER SETTINGS
 %% data input (load data.mat examples from "test_case_dir" directory in "data_generation" directory)
