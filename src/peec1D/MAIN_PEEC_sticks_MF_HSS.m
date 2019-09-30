@@ -69,8 +69,8 @@ hodlroption('threshold',1e-6);
 %
 disp('build HSS/HODLR matrix')
 tic
-H=hss('function',sys_MF,nSticks+N.vol_sou+N.node_app,nSticks+N.vol_sou+N.node_app);
-% H=hodlr('handle',sys_MF,nSticks+N.vol_sou+N.node_app,nSticks+N.vol_sou+N.node_app);
+H=hss('function',sys_MF,nSticks+N.vol_sou+N.node_app,nSticks+N.vol_sou+N.node_app); % comment for use hodlr
+% H=hodlr('handle',sys_MF,nSticks+N.vol_sou+N.node_app,nSticks+N.vol_sou+N.node_app); decomment for use hodlr 
 toc
 %
 compr=100*getSize(H)/((nSticks+N.vol_sou+N.node_app)^2*16);
