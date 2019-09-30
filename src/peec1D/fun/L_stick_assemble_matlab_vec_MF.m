@@ -10,8 +10,8 @@ L=zeros(length(hhout),length(kk));
 % PPgh=zeros(3,npg);
 
 %%
-hhh=1;
-for hh=hhout(1):hhout(end)
+for hhh=1:length(hhout)
+    hh=hhout(hhh);
     PPgh=PPghtot(:,:,hh);
     ll_h=ll_htot(hh);
     ut_h=ut_htot(:,hh);
@@ -34,7 +34,6 @@ for hh=hhout(1):hhout(end)
             integ=integ+gauss_W(ii)*log_eps.*fun_my_dot(ut_h,ut_k).';
         end 
         L(hhh,1:length(kk))=ll_h*integ.';
-    hhh=hhh+1;    
 end 
 L=1.0d-7*0.5*L;
 %%

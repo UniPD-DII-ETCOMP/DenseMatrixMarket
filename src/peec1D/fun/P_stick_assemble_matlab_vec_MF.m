@@ -6,8 +6,8 @@ epsilon0=8.85418781762d-12;
 P=zeros(length(hhout),length(kk));
 %%
 % return
-hhh=1;
-for hh=hhout(1):hhout(end)
+for hhh=1:length(hhout)
+    hh=hhout(hhh);
     ne_cap_hh=Cap_Elem(1,hh); % numero di elementi del nofor hh
     ll_tot_hh=ll_tot_xx(hh).';
 %     kk=hh+1:nNodes;
