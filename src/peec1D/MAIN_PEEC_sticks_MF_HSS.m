@@ -63,14 +63,18 @@ disp('------------------------------------')
 hssoption('block-size',floor((nSticks+N.vol_sou+N.node_app)/10));
 hssoption('compression','svd');
 hssoption('threshold',1e-6);
+hodlroption('block-size',floor((nSticks+N.vol_sou+N.node_app)/10));
+hodlroption('compression','svd'); %hodlr with 'handle' uses ACA
+hodlroption('threshold',1e-6);
 %
-disp('build HSS matrix')
+disp('build HSS/HODLR matrix')
 tic
 H=hss('function',sys_MF,nSticks+N.vol_sou+N.node_app,nSticks+N.vol_sou+N.node_app);
+% H=hodlr('handle',sys_MF,nSticks+N.vol_sou+N.node_app,nSticks+N.vol_sou+N.node_app);
 toc
 %
 compr=100*getSize(H)/((nSticks+N.vol_sou+N.node_app)^2*16);
-disp(['Compression ratio HSS =',num2str(compr),'%'])
+disp(['Compression ratio HSS/HODLR =',num2str(compr),'%'])
 %
 figure
 spy(H)
@@ -78,7 +82,7 @@ axis equal
 title('rank of off-diagonal blocks')
 drawnow
 %
-disp('Solution HSS')
+disp('Solution HSS/HODLR')
 tic
 x_fromHSS = H\b; 
 toc
@@ -102,7 +106,7 @@ disp('------------------------------------')
 %%
 err=100*norm(x-x_fromHSS)/norm(x);
 disp(['Solution perc. error =',num2str(err),'%'])
-disp(['Relative residual =',num2str(100*norm(M*x-b)/norm(b)),'%']);
+disp(['Relative residual =',num2str(100*norm(H*x-b)/norm(b)),'%']);
 %%
 gtoc = toc(gtic); %global TOC
 %%
