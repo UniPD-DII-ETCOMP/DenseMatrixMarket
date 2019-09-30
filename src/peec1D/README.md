@@ -37,7 +37,8 @@ MAIN_PEEC_sticks_MF.m is the main file you must run to start the code.
 MAIN_PEEC_sticks_MF_HSS.m is the main file you must run to start the code coupled with 
                           the low rank compression library https://github.com/numpi/hm-toolbox 
                           based on HODLR and HSS. 
-                          Follow the instruction in *** to download and set up the compression library.
+                          Follow the instruction in [lowrank/README.md](lowrank/README.md) 
+                          to download and set up the compression library.
                           HSS and HODLR methods can be used o compress the PEEC matrix.
                           Note that the compression performances are higly problem dependent
                           and the compression may be very poor without a proper reordering 
