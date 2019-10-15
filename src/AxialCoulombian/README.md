@@ -1,6 +1,6 @@
 # AxialCoulombian code by Riccardo Torchio (riccardo.torchio@studenti.unipd.it)
 
-This directory contains an Axialsymmetric code for electromagnetic problems based on the Coulombian formulation presented in
+This directory contains an Axisymmetric code for electromagnetic problems based on the Coulombian formulation presented in
 
 * [R. Torchio et al., "Volume Integral Equation Methods for Axisymmetric Problems with Conductive and Magnetic Media," in IEEE Transactions on Magnetics. in press]()
 
