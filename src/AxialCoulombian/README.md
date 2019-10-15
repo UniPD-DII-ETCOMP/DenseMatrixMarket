@@ -4,6 +4,10 @@ This directory contains an Axisymmetric code for electromagnetic problems based 
 
 * [R. Torchio et al., "Volume Integral Equation Methods for Axisymmetric Problems with Conductive and Magnetic Media," in IEEE Transactions on Magnetics. in press]()
 
+and, for 3D cases, in
+
+* [R. Torchio, "A Volume PEEC Formulation Based on the Cell Method for Electromagnetic Problems from Low to High Frequency," in IEEE Transactions on Antennas and Propagation. doi: 10.1109/TAP.2019.2927789](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8764572&isnumber=4907023)
+
 A more general, optimized, parallel (OpenMP), fortran90 version of this code has been used in the above paper
 
 
