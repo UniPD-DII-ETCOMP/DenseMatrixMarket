@@ -21,13 +21,14 @@ MAIN_dense.m is the main file you must run to start the code.
                       The final system of equations is generated and then solved by Matlab backslash
 
 
-MAIN_to_low_rank_cond_only.m is the main file you must run to start the code coupled with the low rank compression library https://github.com/numpi/hm-toolbox based on HODLR and HSS. 
-                   		 HSS and HODLR methods can be used o compress the matrix.
-                    		 Note that the compression performances are higly problem dependent and the compression may be very poor without a proper reordering of the DoFs.
-		   		 In order to test the application of HSS to the Axysimmetric Coulombian formulation follow these steps:
-	            			1. [Download the Matlab hm-toolbox https://github.com/numpi/hm-toolbox]
-	            			2. [Extract it so that the "hm-toolbox-master" directory is at the same level of "test_cases", "fun"] 		 
-		    			3. [Execute "MAIN_to_low_rank_cond_only.m"]
+MAIN_to_low_rank_cond_only.m is the main file you must run to start the code coupled with the low rank compression library https://github.com/numpi/hm-toolbox based on HODLR and HSS. HSS and HODLR methods can be used o compress the matrix.
+Note that the compression performances are higly problem dependent and the compression may be very poor without a proper reordering of the DoFs.
+In order to test the application of HSS to the Axysimmetric Coulombian formulation follow these steps:
+
+1. [Download the Matlab hm-toolbox https://github.com/numpi/hm-toolbox]
+2. [Extract it so that the "hm-toolbox-master" directory is at the same level of "test_cases", "fun"] 		 
+3. [Execute "MAIN_to_low_rank_cond_only.m"]
+
 		    		 Note that this is only to show how to combine HODLR/HSS with the Axisymmetric problems in a matrix-free form, 
                    		 i.e. the system matrix is never fully assembled/stored. 
                    		 The actual compression ratio depends on the specific problem features, in particular the ordering of the unknowns.
