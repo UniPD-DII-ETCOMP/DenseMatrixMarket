@@ -1,0 +1,117 @@
+%% Main_AXIAL_EH
+clear
+close all
+clc
+%% BEGIN USER SETTINGS
+% problem definition
+test_case_dir_con = 'test1'; % select source directory for conductive media, set test_case_dir_con = '' to exclude conductive media
+test_case_dir_mag = 'test1'; % select source directory for magnetic media, set test_case_dir_mag = '' to exclude magnetic media
+test_case_dir_ext = 'test1'; % select source directory for exteranl coil, set test_case_dir_ext = '' to exclude exteranl coil
+rrho_con=1/2e3; % electric resistivity of conductive media [Ohm/m^2]
+mmu_r=5;% permeability of magnetic  media
+f=50; % frequency [Hz]
+w = 2*pi*f; % omega
+eps_0 = 8.85418781762e-12; % vacuum permittivity
+mu_0 = 4*pi*1e-7; % vacuum permeability 
+rrho_mag=1/(1j*w(1)*mu_0*(mmu_r-1)); % magnetic resistivity of magnetic volume media
+plotflag = 1; %graphics postprocessing flag (1 = yes, 0 = no)
+ext_Field_ext=0; %0=external field off ||| 1=extarnal field on
+E_ext=@(r,phi,z) [0, -mu_0*1j*w(1)*r*0.5, 0];
+H_ext=@(r,phi,z) [0 ,0, mu_0/mu_0];
+J_ext=@(r,phi,z) [0, 1, 0]; % coil J_ext current in the external coil, if any
+% END USER SETTINGS
+%% data input (load data.mat examples from "test_case_dir" directory in "data_generation" directory)
+if ~strcmp(test_case_dir_con,'');cd test_cases; cd('cond'); cd(test_case_dir_con); load datr cd ..; cd ..; cd ..; end
+if ~strcmp(test_case_dir_mag,'');cd test_cases; cd('mag'); cd(test_case_dir_mag); cd ..; cd ..; cd ..; end
+if ~strcmp(test_case_dir_ext,'');cd test_cases; cd('ext'); cd(test_case_dir_ext); cd ..; cd ..; cd ..; end
+%% Time
+gtic = tic; %global tic
+%% Pre-processing of data
+cd('fun'); addpath(pwd); cd ..
+[Matrix_P0_c,Matrix_P0_m]=fun_pre_processing(Matrix_P0_c,Matrix_P0_m);
+%% Computing matrices RLP
+disp('-------------------------------------------------------------------')
+disp('computing matrices RLP...')
+main_compute_matrices2; % compute matrices R L P N 
+disp('...RLP done!')
+disp('-------------------------------------------------------------------')
+%% Computing matrices incidances
+disp('-------------------------------------------------------------------')
+disp('computing matrices GCD...')
+main_computing_incidance_matrices; % compute incidence matrices
+disp('... done!')
+disp('-------------------------------------------------------------------')
+%% size storage system
+disp('-------------------------------------------------------------------')
+size_SISTEM=N.face_con+N.edge_mag;
+disp(['Size system= ',num2str(size_SISTEM)])
+disp('-------------------------------------------------------------------')
+%% Assebling System
+disp('-------------------------------------------------------------------')
+disp('Assembling system...')
+main_assembling_system; % assembling the system of equations
+disp('... done!')
+disp('-------------------------------------------------------------------')
+%% size storage system
+disp('-------------------------------------------------------------------')
+size_SISTEM=size(SYSTEM,1);
+disp(['Size system = ',num2str(size_SISTEM)])
+disp('-------------------------------------------------------------------')
+%% Rhs-term External field
+disp('-------------------------------------------------------------------')
+disp('External coils...')
+main_compute_ext_fiel_coils; % rhs: contribution of external coils
+disp('... done!')
+disp('-------------------------------------------------------------------')
+%% Rhs-term External field
+disp('-------------------------------------------------------------------')
+disp('External fields...')
+main_compute_rhs_ext_field; % rhs: contribution of external fields
+disp('... done!')
+disp('-------------------------------------------------------------------')
+%% Change of variables
+disp('-------------------------------------------------------------------')
+disp('Change of variables (jc,m)-->(jc,phim)...')
+main_change_of_variable; % project the system into a new set of equations
+disp('... done!')
+disp('-------------------------------------------------------------------')
+%% size  system
+disp('-------------------------------------------------------------------')
+size_SISTEM2=size(SYSTEM2,1);
+disp(['Size system= ',num2str(size_SISTEM2)])
+disp('-------------------------------------------------------------------')
+%% SOLVING
+disp('-------------------------------------------------------------------')
+disp('Solving ...')
+tic
+main_solving; % solve the system of equation
+toc
+disp('... done!')
+disp('-------------------------------------------------------------------')
+%% Extracting solution
+disp('-------------------------------------------------------------------')
+disp('Extracting solution ...')
+tic
+main_extracting_solution; % extract the solution jc jm
+toc
+disp('... done!')
+disp('-------------------------------------------------------------------')
+%%
+disp('-------------------------------------------------------------------')
+disp('Post-processing M ...')
+if 1
+main_post_M; % compute the Magnetization vector 
+else
+disp('... off ...')  
+disp('... type "main_post_M" to evaluate M...')
+end
+disp('... done!')
+disp('-------------------------------------------------------------------')
+%%
+disp('-------------------------------------------------------------------')
+disp('Plot JM ...')
+main_plot_JM; % plot the results
+disp('... done!')
+disp('-------------------------------------------------------------------')
+%%
+return
