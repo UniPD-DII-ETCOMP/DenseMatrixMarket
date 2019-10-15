@@ -1,5 +1,6 @@
-# Dense Matrix Market ([Authors contact](docs/contacts.md)) <img src="docs/hss.png" width="240" height="200"> 
 <img src="docs/dmm.png" width="240" height="200"> 
+# Dense Matrix Market ([Authors contact](docs/contacts.md)) <img src="docs/hss.png" width="240" height="200"> 
+
 The purpose of this repository is twofold:
 
 1. [Provide sample Matlab PEEC codes for a variety of electromagnetic problems and geometric elements](docs/sample.md)
