@@ -1,4 +1,4 @@
-# AxialCoulombian code by Riccardo Torchio (riccardo.torchio@studenti.unipd.it)
+# AxialCoulombian code 
 
 This directory contains an Axisymmetric code for electromagnetic problems based on the Coulombian formulation presented in
 
@@ -49,3 +49,7 @@ Set the "test_case_dir" variable in "MAIN_dense.m" or "MAIN_to_low_rank_cond_onl
 User-defined test cases
 -----------------------
 Follow the instuctions given in "README.txt" inside the "test_cases" directory.
+
+Contacts
+-----------------------
+by Riccardo Torchio (riccardo.torchio@studenti.unipd.it)
