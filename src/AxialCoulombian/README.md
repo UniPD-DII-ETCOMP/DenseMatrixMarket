@@ -1,4 +1,4 @@
-# AxialCoulombian by Riccardo Torchio (riccardo.torchio@studenti.unipd.it)
+# AxialCoulombian code by Riccardo Torchio (riccardo.torchio@studenti.unipd.it)
 
 This directory contains an Axialsymmetric code for electromagnetic problems based on the Coulombian formulation presented in
 
