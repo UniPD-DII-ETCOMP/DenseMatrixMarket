@@ -2,5 +2,6 @@
 
 Several examples show how to combine low rank approximation techniques with the provided integral methods:
 
-1. [HSS applied to PEEC with 1D elements](../src/peec1D/lowrank)
+1. [HSS/HODLR applied to PEEC with 1D elements](../src/peec1D/lowrank)
+2. [HSS/HODLR applied to Axisymmetric code (Coloumbian formulation) with quadrilateral elements](../src/AxialColoumbian)
 
