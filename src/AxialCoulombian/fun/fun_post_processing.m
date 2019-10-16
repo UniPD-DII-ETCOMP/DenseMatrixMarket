@@ -45,7 +45,7 @@ view(0,0)
 axis([min(Matrix_P0(:,1))*0 max(Matrix_P0(:,1)) min(Matrix_P0(:,2))-1 max(Matrix_P0(:,2))+1 min(Matrix_P0(:,3)) max(Matrix_P0(:,3))])
 colormap jet 
 colorbar
-title('J \Re')
+title('\Re(J)')
 cmin=min(real(sol.Jphi));
 cmax=max(real(sol.Jphi));
 if cmin==cmax
@@ -66,7 +66,7 @@ view(0,0)
 axis([min(Matrix_P0(:,1))*0 max(Matrix_P0(:,1)) min(Matrix_P0(:,2))-1 max(Matrix_P0(:,2))+1 min(Matrix_P0(:,3)) max(Matrix_P0(:,3))])
 colormap jet 
 colorbar
-title('J \Im')
+title('\Im(J)')
 cmin=min(imag(sol.Jphi));
 cmax=max(imag(sol.Jphi));
 if cmin==cmax
@@ -90,7 +90,7 @@ view(0,0)
 axis([min(Matrix_P0(:,1))*0 max(Matrix_P0(:,1)) min(Matrix_P0(:,2))-1 max(Matrix_P0(:,2))+1 min(Matrix_P0(:,3)) max(Matrix_P0(:,3))])
 colormap jet 
 colorbar
-title('M \Re')
+title('\Re(M)')
 cmin=min(sol.M_norm_r);
 cmax=max(sol.M_norm_r);
 if cmin==cmax
@@ -111,7 +111,7 @@ view(0,0)
 axis([min(Matrix_P0(:,1))*0 max(Matrix_P0(:,1)) min(Matrix_P0(:,2))-1 max(Matrix_P0(:,2))+1 min(Matrix_P0(:,3)) max(Matrix_P0(:,3))])
 colormap jet 
 colorbar
-title('M \Im')
+title('\Im(M)')
 cmin=min(sol.M_norm_i);
 cmax=max(sol.M_norm_i);
 if cmin==cmax
@@ -136,7 +136,7 @@ view(0,0)
 axis([min(Matrix_P0(:,1))*0 max(Matrix_P0(:,1)) min(Matrix_P0(:,2))-1 max(Matrix_P0(:,2))+1 min(Matrix_P0(:,3)) max(Matrix_P0(:,3))])
 colormap jet 
 colorbar
-title('M \Re')
+title('\Re(M)')
 cmin=min(sol.M_norm_r);
 cmax=max(sol.M_norm_r);
 if cmin==cmax
@@ -158,7 +158,7 @@ view(0,0)
 axis([min(Matrix_P0(:,1))*0 max(Matrix_P0(:,1)) min(Matrix_P0(:,2))-1 max(Matrix_P0(:,2))+1 min(Matrix_P0(:,3)) max(Matrix_P0(:,3))])
 colormap jet 
 colorbar
-title('M \Im')
+title('\Im(M)')
 cmin=min(sol.M_norm_i);
 cmax=max(sol.M_norm_i);
 if cmin==cmax

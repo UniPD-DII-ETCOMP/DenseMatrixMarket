@@ -185,7 +185,7 @@ patch('Faces',F1_m(1:4,:).','Vertices',Matrix_P0_m,'Facecolor',green,'FaceAlpha'
 patch('Faces',F1_e(1:4,:).','Vertices',Matrix_P0_e,'Facecolor','r','FaceAlpha',alpha) 
 legend('con','mag','ext-coil')
 axis equal
-title('Boundary')
+title('Mesh')
 xlabel('r')
 ylabel('\phi')
 zlabel('z')
