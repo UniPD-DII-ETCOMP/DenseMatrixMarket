@@ -22,6 +22,6 @@ or "MAIN_to_low_rank_cond_only.m" to select the user test case
 
 Subdirectories contain some examples of data generation:
 
-"test1" and "test2": geometrical data are taken from a COMSOL mesh file
+"test1", "test2" and "test2_small": geometrical data are taken from a COMSOL mesh file
 
 "test_from_user": contains a sample user defined "geo.mat" file 
