@@ -1,4 +1,4 @@
-Dense Matrix Market: Axysimmetric code (data) by Riccardo Torchio (riccardo.torchio@studenti.unipd.it)
+Dense Matrix Market: Axisymmetric code (data) by Riccardo Torchio (riccardo.torchio@studenti.unipd.it)
 -------------------------------------------------------------------------------------------------------
 How to create a new user-defined test-case:
 
