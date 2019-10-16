@@ -10,7 +10,7 @@ else
 end
 %% BEGIN USER SETTINGS
 % problem definition
-test_case_dir.con = 'test2'; % select source directory for conductive media, set test_case_dir.con = '' to exclude conductive media
+test_case_dir.con = 'test2_small'; % select source directory for conductive media, set test_case_dir.con = '' to exclude conductive media
 test_case_dir.mag = ''; % not supported yet
 test_case_dir.ext = ''; % not supported yet
 rrho_con=1/2e3; % electric resistivity of conductive media [Ohm m]
@@ -85,5 +85,3 @@ end
 %%
 return
 
-[Matrix_L] = mu_0*funLphiphi3_acc(N.face_con,1,2,Matrix_P0_c,F1_c);
-Matrix_L([1,4,6],[2,4,7])
