@@ -2,7 +2,7 @@
 
 This directory contains an Axisymmetric code for electromagnetic problems based on the Coulombian formulation presented in
 
-* [R. Torchio et al., "Volume Integral Equation Methods for Axisymmetric Problems with Conductive and Magnetic Media," in IEEE Transactions on Magnetics. in press]()
+* [R. Torchio et al., "Volume Integral Equation Methods for Axisymmetric Problems with Conductive and Magnetic Media," in IEEE Transactions on Magnetics. in press, doi: 10.1109/TMAG.2019.2947394]()
 
 and, for 3D cases, in
 
