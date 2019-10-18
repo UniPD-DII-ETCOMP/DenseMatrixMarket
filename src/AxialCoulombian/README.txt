@@ -33,9 +33,9 @@ MAIN_to_low_rank_cond_only.m is the main file you must run to start the code cou
                    		 WARNING: this version of the code only support conductive media (for the moment)
                          NOTE: MEX-FORTRAN function "funLphiphi3_for_st.mexw64" is used for the evaluation 
                                of the dense matrix coefficients.
-                               IF MEX-FORTRAN functions are not supported the code automatically switch to slow matlab function "funLphiphi3_acc_low_rank".
+                               If MEX-FORTRAN functions are not supported the code automatically switch to slow matlab function "funLphiphi3_acc_low_rank" with a "try and catch" strategy.
                                Try to re-mex the MEX-FORTAN function running "make.m" in /MEXfortran and replace 
-                               the resuting "funLphiphi3_for_st.mexw64" in /fun.
+                               the resulting "funLphiphi3_for_st.mexw64" in /fun.
  
 All user-settable quantities, e.g. frequency and resistivity, are contained in the block identified by the 
 BEGIN USER SETTINGS / END USER SETTINGS comments.
