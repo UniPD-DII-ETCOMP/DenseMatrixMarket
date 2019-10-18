@@ -23,6 +23,7 @@ ext_Field_ext=1; %0=external field off ||| 1=extarnal field on
 E_ext=@(r,phi,z) [0, -mu_0*1j*2*pi*f*r*0.5, 0]; % external electric fiedl [V/m]
 H_ext=@(r,phi,z) [0 ,0, mu_0/mu_0]; % external magnetic field [A/m]
 J_ext=@(r,phi,z) [0, 1, 0]; % coil J_ext current in the external coil [A/m^2], if any
+N_thread =22; % for mexed fortran function
 % END USER SETTINGS
 %% Pre-processing of data
 disp('-------------------------------------------------------------------')
@@ -37,13 +38,28 @@ if ~strcmp(test_case_dir.ext,''); error('external coil  not supported yet');end
 disp('...pre-processing done!')
 disp('-------------------------------------------------------------------')
 %% Rhs-term External fields 
+disp('-------------------------------------------------------------------')
+disp('rhs...')
 [brhs] = fun_compute_ext_field_phi(Area_c,Matrix_P0_c,N.face_con,F1_c,E_ext,3);
+disp('...done!')
+disp('-------------------------------------------------------------------')
 %%
 disp('-------------------------------------------------------------------')
 disp('compute R matrix and handle-L...')
 [Rcdiag] = funRphi_diag_with_check(ex,N,rho_c,Area_c,Matrix_P0_c,F1_c);
-[PPP1,PPP2,NPP,NP1,NP2,WW] = funLphiphi3_acc_PrePro(N.face_con,1,2,Matrix_P0_c,F1_c);
-Lfun = @(ii,jj) mu_0*funLphiphi3_acc_low_rank(PPP1,PPP2,NPP,NP1,NP2,WW,ii,jj);
+try 
+ Lfun = @(ii,jj)mu_0*fun_L_interface(N.node_con,N.face_con,Area_c,...
+                Matrix_P0_c,F1_c,N_thread,ii,jj);
+ check=Lfun(1,1); mtlb=0;
+catch ME
+    warning('FORTAN MEX-FILE is not supported, try to re-mex it in /MEXfortran and replace it in /fun')
+    warnin(['MESSAGE ERROR:' ME.message]);
+    warning('Slow Matlab function is used instead');
+    mtlb=1;
+     [PPP1,PPP2,NPP,NP1,NP2,WW] = funLphiphi3_acc_PrePro(N.face_con,1,2,Matrix_P0_c,F1_c);
+     Lfun = @(ii,jj) mu_0*funLphiphi3_acc_low_rank(PPP1,PPP2,NPP,NP1,NP2,WW,ii,jj);   
+end
+if mtlb==0; disp('...FORTAN MEX-FUNCTION supported...'); end
 disp('... done!')
 disp('-------------------------------------------------------------------')
 %% compress HSS/HODLR

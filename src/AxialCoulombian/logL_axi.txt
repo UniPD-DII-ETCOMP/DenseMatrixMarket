@@ -1,0 +1,20 @@
+ sono arrivato al check numerico
+ input 1
+ input 2
+ input 3
+ input 4
+ input 5
+                  1740
+                     3
+ input 6
+ N_face                  1420
+ input 7
+ input 8
+ input 9
+ input 10
+ input 11
+ input 12
+ ho chiamato la subroutine e creato le matrici
+ ho deallocato le cose inutili
+ ho convertito la matrice per matlab
+ ho deallocato la matrice e ora chiudo il logLve.txt
