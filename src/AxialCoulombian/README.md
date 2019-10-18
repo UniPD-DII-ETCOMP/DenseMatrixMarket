@@ -35,7 +35,9 @@ In order to test the application of HSS to the Axysimmetric Coulombian formulati
 3. Execute "MAIN_to_low_rank_cond_only.m"
 
 Note that this is only to show how to combine HODLR/HSS with the Axisymmetric problems in a matrix-free form, i.e. the system matrix is never fully assembled/stored. The actual compression ratio depends on the specific problem features, in particular the ordering of the unknowns.
+
 WARNING: this version of the code only support conductive media (for the moment)
+
 NOTE: MEX-FORTRAN function "funLphiphi3_for_st.mexw64" is used for the evaluation 
                                of the dense matrix coefficients.
                                IF MEX-FORTRAN functions are not supported the code automatically switch to slow matlab function "funLphiphi3_acc_low_rank".
