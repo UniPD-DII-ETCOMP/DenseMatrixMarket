@@ -3,7 +3,7 @@
 
 The purpose of this repository is twofold:
 
-1. [Provide sample Matlab PEEC codes for a variety of electromagnetic problems and geometric elements](docs/sample.md)
+1. [Provide sample Matlab Integral Equation codes for a variety of electromagnetic problems and geometric elements](docs/sample.md)
 2. [Provide means of generating benchmark dense matrices for exploring low rank approximation techniques](docs/dense.md)
 
 # Citation
