@@ -53,7 +53,7 @@ try
  check=Lfun(1,1); mtlb=0;
 catch ME
     warning('FORTAN MEX-FILE is not supported, try to re-mex it in /MEXfortran and replace it in /fun')
-    warnin(['MESSAGE ERROR:' ME.message]);
+    warning(['MESSAGE ERROR:' ME.message]);
     warning('Slow Matlab function is used instead');
     mtlb=1;
      [PPP1,PPP2,NPP,NP1,NP2,WW] = funLphiphi3_acc_PrePro(N.face_con,1,2,Matrix_P0_c,F1_c);
