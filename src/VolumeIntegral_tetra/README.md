@@ -35,7 +35,7 @@ BEGIN USER SETTINGS / END USER SETTINGS comments.
 Available test cases
 --------------------
 Several test cases are contained in separate directories under "test_cases". 
-Set the "test_case_dir" variable in "MAIN_dense.m" or "MAIN_to_low_rank_cond_only.m " to the appropiate directory.
+Set the "test_case_dir" variable in "MAIN_dense.m" or "MAIN_to_low_rank.m " to the appropiate directory.
 
 User-defined test cases
 -----------------------
