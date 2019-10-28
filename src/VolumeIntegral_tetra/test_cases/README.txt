@@ -4,7 +4,7 @@ How to create a new user-defined test-case:
 
 1. User must provide file "geo.mat" which contains:
 	a. Matrix_P0 = Npoints x 3 (the coordianate of the Npoints nodes of the tetrahedral mesh) 
-	b. VP = 4 x Ntetra incidence matrix (tetrahedral to nodes of the mesh) 
+	b. VP = 4 x Ntetra incidence matrix (tetrahedra to nodes of the mesh) 
 
 2. duplicate the directory "test_from_user" and rename it (e.g. "new_user_dir")
 3. copy the user's file "geo.mat" inside "new_user_dir"
