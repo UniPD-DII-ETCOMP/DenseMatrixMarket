@@ -27,7 +27,7 @@ MAIN_dense.m is the main file you must run to start the code.
 -------------------------------------------------------------------
 
 MAIN_to_low_rank_cond_only.m is the main file you must run to start the code coupled with the low rank compression library https://github.com/numpi/hm-toolbox based on HODLR and HSS. HSS and HODLR methods can be used to compress the matrix.
-Note that the compression performances are higly problem dependent and the compression may be very poor without a proper reordering of the DoFs.
+Note that the compression performances are highly problem dependent and the compression may be very poor without a proper reordering of the DoFs.
 In order to test the application of HSS to the Axysimmetric Coulombian formulation follow these steps:
 
 1. Download the Matlab hm-toolbox https://github.com/numpi/hm-toolbox
