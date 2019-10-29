@@ -1,4 +1,14 @@
-function [rho_c,N,ind,EV,VE,EV_ind,VE_ind,Q,brhs,norm_eps,w,bared] = fun_pre_processing(F1,D1,C1,G1,VP,Matrix_D,Matrix_C,Matrix_G,Matrix_P0,E_ext,rrho_c,N,f)
+function [rho_c,N,ind,EV,VE,EV_ind,VE_ind,Q,brhs,norm_eps,w,bared,...
+    xmin,xmax,ymin,ymax,zmin,zmax] = ...
+    fun_pre_processing(F1,D1,C1,G1,VP,Matrix_D,...
+    Matrix_C,Matrix_G,Matrix_P0,E_ext,rrho_c,N,f)
+%%
+xmin=min(Matrix_P0(:,1));
+xmax=max(Matrix_P0(:,1));
+ymin=min(Matrix_P0(:,2));
+ymax=max(Matrix_P0(:,2));
+zmin=min(Matrix_P0(:,3));
+zmax=max(Matrix_P0(:,3));
 %% arranging data & conta degli elementi
 disp('-------------------------------------------------------------------')
 disp('ARRANGING DATA ...')
@@ -84,7 +94,7 @@ disp('-------------------------------------------------------------------')
 %%
 disp('-------------------------------------------------------------------')
 disp('plot geo...')
-fun_plot_geo(F1,ind,Matrix_P0);
+fun_plot_geo(F1,ind,Matrix_P0,xmin,xmax,ymin,ymax,zmin,zmax);
 drawnow
 disp('... done!')
 disp('-------------------------------------------------------------------')

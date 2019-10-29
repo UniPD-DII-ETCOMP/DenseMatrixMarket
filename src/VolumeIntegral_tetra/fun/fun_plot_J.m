@@ -1,4 +1,5 @@
-function [] = fun_plot_J(F1,ind,Matrix_P0,J_bar,J_r,J_norm_r,J_norm_i,J_i)
+function [] = fun_plot_J(F1,ind,Matrix_P0,J_bar,J_r,J_norm_r,...
+    J_norm_i,J_i,xmin,xmax,ymin,ymax,zmin,zmax)
 tic
 grey= [0.721568644046783 0.721568644046783 0.721568644046783];
 %% real
@@ -16,6 +17,7 @@ ylabel('y')
 zlabel('z')
 colorbar;
 caxis([cmin cmax]);
+axis([xmin,xmax,ymin,ymax,zmin,zmax])
 view(3)
 title('\Re(J)')
 %% imag
@@ -33,6 +35,7 @@ ylabel('y')
 zlabel('z')
 colorbar;
 caxis([cmin cmax]);
+axis([xmin,xmax,ymin,ymax,zmin,zmax])
 view(3)
 title('\Im(J)')
 %%

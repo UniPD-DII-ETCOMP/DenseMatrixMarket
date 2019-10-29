@@ -14,7 +14,8 @@ thr=0.3; %threshold for close to far field
 cd test_cases; cd(test_case_dir); load data.mat; cd ..; cd ..
 %% pre_procesing
 cd('fun'); addpath(pwd); cd ..
-[rho_c,N,ind,EV,VE,EV_ind,VE_ind,Q,brhs,norm_eps,w,bared] = fun_pre_processing(F1,D1,C1,...
+[rho_c,N,ind,EV,VE,EV_ind,VE_ind,Q,brhs,norm_eps,w,bared,...
+    xmin,xmax,ymin,ymax,zmin,zmax] = fun_pre_processing(F1,D1,C1,...
     G1,VP,Matrix_D,Matrix_C,Matrix_G,Matrix_P0,E_ext,rrho_c,N,f);
 %% R
 disp('-------------------------------------------------------------------')
@@ -91,7 +92,8 @@ disp('post-processing...')
 x_f=Matrix_C(:,ind.cotree)*x;
 [J_r,J_i,J_norm_r,J_norm_i,J_bar] = fun_post_J(N.face,N.volu,...
     N.volu,Matrix_P0,VP,D1,x_f,1:N.face,1:N.volu);
-fun_plot_J(F1,ind,Matrix_P0,J_bar,J_r,J_norm_r,J_norm_i,J_i);
+fun_plot_J(F1,ind,Matrix_P0,J_bar,J_r,J_norm_r,J_norm_i,J_i,...
+    xmin,xmax,ymin,ymax,zmin,zmax);
 disp('... done!')
 disp('-------------------------------------------------------------------')
 end
