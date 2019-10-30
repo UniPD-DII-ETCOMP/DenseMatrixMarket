@@ -1,4 +1,4 @@
-<img src="docs/qrcode.png" width="150" height="150"><img src="docs/dmm.png" width="220" height="200"><img src="docs/hss.png" width="240" height="200"><img src="docs/tk_geo.png" width="240" height="200">  
+<img src="docs/qrcode.png" width="150" height="150"><img src="docs/dmm.png" width="220" height="200"><img src="docs/hss.png" width="240" height="200"><img src="docs/tk.png" width="210" height="210">  
 # Dense Matrix Market ([Authors contact](docs/contacts.md)) 
 
 The purpose of this repository is twofold:
