@@ -19,3 +19,5 @@ Subdirectories contain some examples of data generation:
 "SphereShell1866", "SphereShell8940", "test1", "test2", "testTK" and "testDMM": geometrical data are taken from a COMSOL mesh file
 
 "test_from_user": contains a sample user defined "geo.mat" file 
+
+
