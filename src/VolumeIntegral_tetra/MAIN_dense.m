@@ -2,7 +2,7 @@ clear
 close all
 clc
 %% BEGIN USER SETTINGS
-test_case_dir = 'test2';
+test_case_dir = 'testTK';
 f = 50;% Hz
 rrho_c=1/56e3;% Ohm m
 N.thread = 22; 
@@ -49,7 +49,7 @@ try
 tic
 [L] = fun_L_curledge_curledge_for90_st1(N.volu,N.node,N.edge,N.n_EV_max,...
     [EV;zeros(1,N.edge)],Matrix_P0.',VP,[EV_ind;zeros(1,N.edge)],0,...
-    N.n_EV,N.thread,length(kkout),length(hhout),hhout,kkout,bared,thr);
+    N.n_EV,N.thread,length(kkout),length(hhout),hhout,kkout,bared,thr); L=0.5*(L+L.');
 toc
 mtlb=0;
 catch ME
@@ -64,7 +64,7 @@ catch ME
     toc
     tic
     [L] = fun_L_curledge_curledge_pp(EV,norm_eps,N.n_EV,X8e,Y8e,Z8e,...
-        W8e,X11e,Y11e,Z11e,W11e,we,length(hhout),length(kkout),hhout,kkout);
+        W8e,X11e,Y11e,Z11e,W11e,we,length(hhout),length(kkout),hhout,kkout); L=0.5*(L+L.');
     toc
 end
 disp('... done!')
@@ -94,6 +94,7 @@ x_f=Matrix_C(:,ind.cotree)*x;
     N.volu,Matrix_P0,VP,D1,x_f,1:N.face,1:N.volu);
 fun_plot_J(F1,ind,Matrix_P0,J_bar,J_r,J_norm_r,J_norm_i,J_i,...
     xmin,xmax,ymin,ymax,zmin,zmax);
+fun_plot_normJ(J_norm_r,J_norm_i,Matrix_D,ind,xmin,xmax,ymin,ymax,zmin,zmax,F1,Matrix_P0)
 disp('... done!')
 disp('-------------------------------------------------------------------')
 end

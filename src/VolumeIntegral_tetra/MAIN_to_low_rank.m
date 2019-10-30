@@ -128,6 +128,7 @@ x_f=Matrix_C(:,ind.cotree)*x;
     N.volu,Matrix_P0,VP,D1,x_f,1:N.face,1:N.volu);
 fun_plot_J(F1,ind,Matrix_P0,J_bar,J_r,J_norm_r,J_norm_i,J_i,...
     xmin,xmax,ymin,ymax,zmin,zmax);
+fun_plot_normJ(J_norm_r,J_norm_i,Matrix_D,ind,xmin,xmax,ymin,ymax,zmin,zmax,F1,Matrix_P0)
 disp('... done!')
 disp('-------------------------------------------------------------------')
 end

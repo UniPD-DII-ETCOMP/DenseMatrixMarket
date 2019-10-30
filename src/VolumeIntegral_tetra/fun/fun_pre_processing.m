@@ -94,7 +94,7 @@ disp('-------------------------------------------------------------------')
 %%
 disp('-------------------------------------------------------------------')
 disp('plot geo...')
-fun_plot_geo(F1,ind,Matrix_P0,xmin,xmax,ymin,ymax,zmin,zmax);
+fun_plot_geo2(F1,ind,Matrix_P0,xmin,xmax,ymin,ymax,zmin,zmax);
 drawnow
 disp('... done!')
 disp('-------------------------------------------------------------------')
