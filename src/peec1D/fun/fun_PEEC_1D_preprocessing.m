@@ -147,7 +147,7 @@ if E_external == 1
     Us = fun_compute_ext_field_dual_edge_dot_triang(NN,nSticks,G,E_ext,7);
     toc
 else
-    disp('...on...')
+    disp('...off...')
 end
 toc
 disp('...done!')
