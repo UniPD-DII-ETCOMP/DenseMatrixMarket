@@ -114,9 +114,11 @@ title('ranks')
 %%
 disp('-------------------------------------------------------------------')
 disp('solving...')
+brhs_map=brhs(map)
 tic
-x=SYS\brhs(map); x=x(invmap);
+x=SYS\brhs_map; 
 toc
+x=x(invmap);
 disp('... done!')
 disp('-------------------------------------------------------------------')
 %%
