@@ -1,6 +1,6 @@
 # VolumeIntegral code 
 
-This directory contains a VolumeIntegral code for electromagnetic problems,
+This directory contains a Volume Integral code for electromagnetic problems,
 
 
 In this code, simply connected conductive domains can be considered. 
