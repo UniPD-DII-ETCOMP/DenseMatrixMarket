@@ -1,0 +1,17 @@
+ num_check
+                     4
+                  4690
+ input 1
+ called
+ G
+ mxCreateDoubleMatrix
+ mxCopyReal8ToPtr, sizes C and nf:                     3                 11538
+                 11538
+ C
+ D
+ mxCreateDoubleMatrix
+ mxCopyReal8ToPtr, sizes F and nf:                     5                 16384
+                 11538
+ F
+ matrices to matlab
+ closing log.txt

@@ -30,7 +30,7 @@ try
     mtlb=0;
 catch ME
     warning('FORTAN MEX-FILE is not supported, try to re-mex it in /MEXfortran/R and replace it in /fun')
-    warnin(['MESSAGE ERROR:' ME.message]);
+    warning(['MESSAGE ERROR:' ME.message]);
     warning('Slow Matlab function is used instead');    
     mtlb=1;
     tic
@@ -54,7 +54,7 @@ toc
 mtlb=0;
 catch ME
     warning('FORTAN MEX-FILE is not supported, try to re-mex it in /MEXfortran/L and replace it in /fun')
-    warnin(['MESSAGE ERROR:' ME.message]);
+    warning(['MESSAGE ERROR:' ME.message]);
     warning('Slow Matlab function is used instead');    
     mtlb=1;
     tic 

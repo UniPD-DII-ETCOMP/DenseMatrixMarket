@@ -1,5 +1,12 @@
 function [G1,C1,D1,F1,Matrix_C,Matrix_G,Matrix_D] = fun_create_data(VP)
-[G1,C1,D1,F1]=gcd_matlab(VP);
+try
+    [G1,C1,D1,F1]=gcd_mexed(VP);
+catch ME
+    warning('FORTAN MEX-FILE is not supported, try to re-mex it in /test_cases/gcd_to_mex and replace it in /test_cases')
+    warning(['MESSAGE ERROR:' ME.message]);
+    warning('Slow Matlab function is used instead');     
+    [G1,C1,D1,F1]=gcd_matlab(VP);    
+end
 %% number of nodes edges faces volumes
 nn = max(max(VP));
 ne = size(G1,2);
