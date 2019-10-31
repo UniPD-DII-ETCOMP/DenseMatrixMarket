@@ -16,10 +16,10 @@ or "MAIN_to_low_rank.m" to select the user test case
 
 Subdirectories contain some examples of data generation:
 
-"SphereShell1866", "SphereShell8940", "test1", "test2", "testTK" and "testDMM": geometrical data are taken from a COMSOL mesh file
+"SphereShell1866", "SphereShell8940", "test1", "test2", "testTK", "testTK2" and "testDMM": geometrical data are taken from a COMSOL mesh file
 
 "test_from_user": contains a sample user defined "geo.mat" file 
 
 "test_spherical_shell_from_user": generate a user defined test case of a spherical shell
 
-
+"test_brick_from_user": generate a user defined test case of a brick with a regular mesh
