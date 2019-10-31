@@ -20,4 +20,6 @@ Subdirectories contain some examples of data generation:
 
 "test_from_user": contains a sample user defined "geo.mat" file 
 
+"test_spherical_shell_from_user": generate a user defined test case of a spherical shell
+
 

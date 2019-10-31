@@ -7,10 +7,10 @@ test_case_dir = 'test2';
 f = 50;% Hz
 rrho_c=1/56e3; % Ohm m
 N.thread = 22; 
-reord=1; %reordering of unknowns flag (1 = yes, 0 = no)
+reord=0; %reordering of unknowns flag (1 = yes, 0 = no)
 E_ext=@(x,y,z) [-1j*y, 1j*x, 0];
 plotflag = 1; %graphics postprocessing flag (1 = yes, 0 = no)
-thr=0.3; %threshold for close to far field
+thr=0.3; %threshold for close to far field, set this value greater than the max distance between two mesh elements to improve accuracy
 % END USER SETTINGS
 %% 
 if exist('hm-toolbox-master','dir')
@@ -114,7 +114,7 @@ title('ranks')
 %%
 disp('-------------------------------------------------------------------')
 disp('solving...')
-brhs_map=brhs(map)
+brhs_map=brhs(map);
 tic
 x=SYS\brhs_map; 
 toc

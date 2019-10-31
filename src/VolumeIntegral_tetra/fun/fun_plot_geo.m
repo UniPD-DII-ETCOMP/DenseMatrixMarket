@@ -7,7 +7,7 @@ plot3(0,0,0,'b')
 alpha=0.3;
 patch('Faces',F1(1:3,ind.face_free).','Vertices',Matrix_P0,'Facecolor',grey,'FaceAlpha',alpha) 
 axis equal
-title('geometry')
+title('mesh')
 xlabel('x')
 ylabel('y')
 zlabel('z')

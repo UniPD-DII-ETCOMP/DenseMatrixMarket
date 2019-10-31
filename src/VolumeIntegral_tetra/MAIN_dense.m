@@ -2,13 +2,13 @@ clear
 close all
 clc
 %% BEGIN USER SETTINGS
-test_case_dir = 'testTK';
+test_case_dir = 'test_spherical_shell_from_user';
 f = 50;% Hz
 rrho_c=1/56e3;% Ohm m
 N.thread = 22; 
 E_ext=@(x,y,z) [-1j*y, 1j*x, 0];
 plotflag = 1; %graphics postprocessing flag (1 = yes, 0 = no)
-thr=0.3; %threshold for close to far field
+thr=1.3; %threshold for close to far field, set this value greater than the max distance between two mesh elements to improve accuracy
 % END USER SETTINGS
 %% load data
 cd test_cases; cd(test_case_dir); load data.mat; cd ..; cd ..
