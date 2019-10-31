@@ -118,8 +118,8 @@ patch('Faces',F1(1:3,ind_face_free).','Vertices',Matrix_P0,'Facecolor',[0.7,0.7,
 axis equal
 view(3)
 title('tetrahedra')
-
 %% check
-N_face_free=length(ind_face_free)
+N_face_free=length(ind_face_free);
+disp(['check...',num2str(N_face_free==n^2*6*2*2)])
 %%
 save data.mat Matrix_G  C1 D1 F1 G1 Matrix_C Matrix_D Matrix_P0 VP 
