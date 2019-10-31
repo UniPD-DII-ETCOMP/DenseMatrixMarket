@@ -23,3 +23,7 @@ Subdirectories contain some examples of data generation:
 "test_spherical_shell_from_user": generate a user defined test case of a spherical shell
 
 "test_brick_from_user": generate a user defined test case of a brick with a regular mesh
+
+and
+
+"gcd_to_mex": mexed fortran function and make.m file to create G(edges to node) C(faces to edges) D(volumes to faces) incidence matrices. hash tables are used to speed up the computation
