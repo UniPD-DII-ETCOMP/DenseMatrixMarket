@@ -3,11 +3,11 @@ subroutine fun_L_curledge_curledge(N_volu,N_node,N_edge,nv_max,EV,Matrix_P0, &
 implicit none
 integer*8 nv_max, EV(nv_max+1,N_edge), EV_ind(nv_max+1,N_edge)
 integer*8 n_EV(N_edge), Nhh, Nkk, hhout(Nhh), kkout(Nkk)
-real*8 Matrix_P0(3,N_node), Matrix_L(Nhh,Nkk)
+real*8 Matrix_P0(3,N_node), Matrix_L(Nhh,Nkk), Neps
 integer*8 N_node, N_volu, N_thread,   VP(4,N_volu), N_edge
 real*8 pvt(3,4), nnorm(3,4),area(4),vol
 real*8 w1(3),w2(3),thr, bared(3,N_edge)
-integer*8 ii, jj, ind1, ind2, Neps
+integer*8 ii, jj, ind1, ind2
 real*8 vol_hh(nv_max), vol_kk(nv_max)
 real*8 w_hh(3,nv_max)
 real*8 w_kk(3,nv_max)

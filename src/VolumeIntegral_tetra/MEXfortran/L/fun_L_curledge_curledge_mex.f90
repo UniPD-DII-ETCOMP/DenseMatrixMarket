@@ -43,7 +43,7 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       logical debu
        
       debu = .true. ! .true. o .false. per attivare o disattivare il debug
-	  if(debu) open(unit=66,file='logL_curl_ed.txt',status='unknown')
+	  !if(debu) open(unit=66,file='logL_curl_ed.txt',status='unknown')
 
 ! check for proper number of arguments. 
       if (nrhs .ne. 17) then
@@ -53,7 +53,7 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
         call mexErrMsgIdAndTxt ('MATLAB:fun_L_curledge_curledge:nOutput', &
                                 '1 output argument required.')
       endif
-      if(debu) write(66,*) 'arguments checked'
+      !if(debu) write(66,*) 'arguments checked'
 
 !    Check to see inputs are numeric.
 	  do ii = 1,17
@@ -62,7 +62,7 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
                                 'Inputs must be numeric.')
         endif
 	  enddo
-	  if(debu) write(66,*) 'check num'		
+	  !if(debu) write(66,*) 'check num'		
 	  
 !     Check that input #1 is integer and fetch it
       m = mxGetM(prhs(1))
@@ -75,7 +75,7 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       N_volu_pr = mxGetPr(prhs(1))
       call mxCopyPtrToReal8(N_volu_pr, N_volu_r, siz) ! da double precision a reale
       N_volu=int(N_volu_r,8) ! da reale a intero
-	  if(debu) write(66,*) 'input 1' 
+	  !if(debu) write(66,*) 'input 1' 
       
 !     Check that input #2 is integer and fetch it
       m = mxGetM(prhs(2))
@@ -88,7 +88,7 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       N_node_pr = mxGetPr(prhs(2))
       call mxCopyPtrToReal8(N_node_pr, N_node_r, siz) ! da double precision a reale
       N_node=int(N_node_r,8) ! da reale a intero
-	  if(debu) write(66,*) 'input 2' 	  
+	  !if(debu) write(66,*) 'input 2' 	  
 	  
 !     Check that input #3 is integer and fetch it
       m = mxGetM(prhs(3))
@@ -101,7 +101,7 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       N_edge_pr = mxGetPr(prhs(3))
       call mxCopyPtrToReal8(N_edge_pr, N_edge_r, siz) ! da double precision a reale
       N_edge=int(N_edge_r,8) ! da reale a intero
-	  if(debu) write(66,*) 'input 3' 	
+	  !if(debu) write(66,*) 'input 3' 	
 
 !     Check that input #4 is integer and fetch it
       m = mxGetM(prhs(4))
@@ -114,13 +114,13 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       nv_max_pr = mxGetPr(prhs(4))
       call mxCopyPtrToReal8(nv_max_pr, nv_max_r, siz) ! da double precision a reale
       nv_max=int(nv_max_r,8) ! da reale a intero
-	  if(debu) write(66,*) 'input 4' 	
+	  !if(debu) write(66,*) 'input 4' 	
 
 !     Check that input #5 is integer matrix and fetch it
       m = mxGetM(prhs(5))
       n = mxGetN(prhs(5))
-	  if(debu) write(66,*) m
-	  if(debu) write(66,*) n
+	  !if(debu) write(66,*) m
+	  !if(debu) write(66,*) n
       if(m .ne. nv_max+1 .or. n .ne. N_edge) then
          call mexErrMsgIdAndTxt ('MATLAB:fun_L_curledge_curledge:NonRowVector', &
                                 'Input 5 must be nv_max+1 x N_edge EV')
@@ -131,14 +131,14 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       allocate(EV(nv_max+1,N_edge))
       call mxCopyPtrToReal8(EV_pr, EV_r, siz) ! da double precision a reale
 	  EV = int(EV_r,8)
-	  if(debu) write(66,*) 'input 5'
+	  !if(debu) write(66,*) 'input 5'
 	  deallocate(EV_r)
 	  
 !     Check that input #6 is real matrix and fetch it
       m = mxGetM(prhs(6))
       n = mxGetN(prhs(6))
-	  if(debu) write(66,*) m
-	  if(debu) write(66,*) n
+	  !if(debu) write(66,*) m
+	  !if(debu) write(66,*) n
       if(m .ne. 3 .or. n .ne. N_node) then
          call mexErrMsgIdAndTxt ('MATLAB:fun_L_curledge_curledge:NonRowVector', &
                                 'Input 6 must be 3xN_node Matrix_P0')
@@ -147,13 +147,13 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       Matrix_P0_pr = mxGetPr(prhs(6))
 	  allocate(Matrix_P0(3,N_node))
       call mxCopyPtrToReal8(Matrix_P0_pr, Matrix_P0, siz) ! da double precision a reale
-	  if(debu) write(66,*) 'input 6'
+	  !if(debu) write(66,*) 'input 6'
 	     	
 !     Check that input #7 is integer matrix and fetch it
       m = mxGetM(prhs(7))
       n = mxGetN(prhs(7))
-	  if(debu) write(66,*) m
-	  if(debu) write(66,*) n
+	  !if(debu) write(66,*) m
+	  !if(debu) write(66,*) n
       if(m .ne. 4 .or. n .ne. N_volu) then
          call mexErrMsgIdAndTxt ('MATLAB:fun_L_curledge_curledge:NonRowVector', &
                                 'Input 7 must be 4 x N_volu VP')
@@ -164,14 +164,14 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       allocate(VP(4,N_volu))
       call mxCopyPtrToReal8(VP_pr, VP_r, siz) ! da double precision a reale
 	  VP = int(VP_r,8)
-	  if(debu) write(66,*) 'input 7'			
+	  !if(debu) write(66,*) 'input 7'			
 	  deallocate(VP_r)
 			
 !     Check that input #8 is integer matrix and fetch it
       m = mxGetM(prhs(8))
       n = mxGetN(prhs(8))
-	  if(debu) write(66,*) m
-	  if(debu) write(66,*) n
+	  !if(debu) write(66,*) m
+	  !if(debu) write(66,*) n
       if(m .ne. nv_max+1 .or. n .ne. N_edge) then
          call mexErrMsgIdAndTxt ('MATLAB:fun_L_curledge_curledge:NonRowVector', &
                                 'Input 8 must be nv_max+1 x N_edge EV_ind')
@@ -182,7 +182,7 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       allocate(EV_ind(nv_max+1,N_edge))
       call mxCopyPtrToReal8(EV_ind_pr, EV_ind_r, siz) ! da double precision a reale
 	  EV_ind = int(EV_ind_r,8)
-	  if(debu) write(66,*) 'input 8'			
+	  !if(debu) write(66,*) 'input 8'			
 	  deallocate(EV_ind_r)	
 			
 !     Check that input #9 is integer and fetch it
@@ -195,14 +195,14 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       siz = m*n
       Neps_pr = mxGetPr(prhs(9))
       call mxCopyPtrToReal8(Neps_pr, Neps, siz) ! da double precision a reale
-	  if(debu) write(66,*) 'input 9' 			
+	  !if(debu) write(66,*) 'input 9' 			
 			
 			
 !     Check that input #10 is integer matrix and fetch it
       m = mxGetM(prhs(10))
       n = mxGetN(prhs(10))
-	  if(debu) write(66,*) m
-	  if(debu) write(66,*) n
+	  !if(debu) write(66,*) m
+	  !if(debu) write(66,*) n
       if(m .ne. 1 .or. n .ne. N_edge) then
          call mexErrMsgIdAndTxt ('MATLAB:fun_L_curledge_curledge:NonRowVector', &
                                 'Input 10 must be 1 x N_edge n_EV')
@@ -213,7 +213,7 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       allocate(n_EV_r(N_edge))
       call mxCopyPtrToReal8(n_EV_pr, n_EV_r, siz) ! da double precision a reale
 	  n_EV = int(n_EV_r,8)
-	  if(debu) write(66,*) 'input 10'			
+	  !if(debu) write(66,*) 'input 10'			
       deallocate(n_EV_r)			
 		
 !     Check that input #11 is integer and fetch it
@@ -227,7 +227,7 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       N_thread_pr = mxGetPr(prhs(11))
       call mxCopyPtrToReal8(N_thread_pr, N_thread_r, siz) ! da double precision a reale
 	  N_thread = int(N_thread_r,8)
-	  if(debu) write(66,*) 'input 11' 	
+	  !if(debu) write(66,*) 'input 11' 	
 
 !     Check that input #12 is integer and fetch it
       m = mxGetM(prhs(12))
@@ -240,7 +240,7 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       Nkk_pr = mxGetPr(prhs(12))
       call mxCopyPtrToReal8(Nkk_pr, Nkk_r, siz) ! da double precision a reale
       Nkk=int(Nkk_r,8) ! da reale a intero
-	  if(debu) write(66,*) 'input 12' 
+	  !if(debu) write(66,*) 'input 12' 
 	  
 !     Check that input #13 is integer and fetch it
       m = mxGetM(prhs(13))
@@ -253,13 +253,13 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       Nhh_pr = mxGetPr(prhs(13))
       call mxCopyPtrToReal8(Nhh_pr, Nhh_r, siz) ! da double precision a reale
       Nhh=int(Nhh_r,8) ! da reale a intero
-	  if(debu) write(66,*) 'input 13' 	  
+	  !if(debu) write(66,*) 'input 13' 	  
 
 !     Check that input #14 is integer matrix and fetch it
       m = mxGetM(prhs(14))
       n = mxGetN(prhs(14))
-	  if(debu) write(66,*) m
-	  if(debu) write(66,*) n
+	  !if(debu) write(66,*) m
+	  !if(debu) write(66,*) n
       if(m .ne. 1 .or. n .ne. Nhh) then
          call mexErrMsgIdAndTxt ('MATLAB:fun_L_curledge_curledge:NonRowVector', &
                                 'Input 14 must be 1 x Nhh hhout')
@@ -270,14 +270,14 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       allocate(hhout_r(Nhh))
       call mxCopyPtrToReal8(hhout_pr, hhout_r, siz) ! da double precision a reale
 	  hhout = int(hhout_r,8)
-	  if(debu) write(66,*) 'input 14'			
+	  !if(debu) write(66,*) 'input 14'			
       deallocate(hhout_r)
 
 !     Check that input #15 is integer matrix and fetch it
       m = mxGetM(prhs(15))
       n = mxGetN(prhs(15))
-	  if(debu) write(66,*) m
-	  if(debu) write(66,*) n
+	  !if(debu) write(66,*) m
+	  !if(debu) write(66,*) n
       if(m .ne. 1 .or. n .ne. Nkk) then
          call mexErrMsgIdAndTxt ('MATLAB:fun_L_curledge_curledge:NonRowVector', &
                                 'Input 15 must be 1 x Nkk kkout')
@@ -288,15 +288,15 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       allocate(kkout_r(Nkk))
       call mxCopyPtrToReal8(kkout_pr, kkout_r, siz) ! da double precision a reale
 	  kkout = int(kkout_r,8)
-	  if(debu) write(66,*) 'input 15'			
+	  !if(debu) write(66,*) 'input 15'			
       deallocate(kkout_r)
 
 
 !     Check that input #16 is real matrix and fetch it
       m = mxGetM(prhs(16))
       n = mxGetN(prhs(16))
-	  if(debu) write(66,*) m
-	  if(debu) write(66,*) n
+	  !if(debu) write(66,*) m
+	  !if(debu) write(66,*) n
       if(m .ne. 3 .or. n .ne. N_edge) then
          call mexErrMsgIdAndTxt ('MATLAB:fun_L_curledge_curledge:NonRowVector', &
                                 'Input 16 must be 3xN_edge bared')
@@ -305,7 +305,7 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       bared_pr = mxGetPr(prhs(16))
 	  allocate(bared(3,N_edge))
       call mxCopyPtrToReal8(bared_pr, bared, siz) ! da double precision a reale
-	  if(debu) write(66,*) 'input 16'
+	  !if(debu) write(66,*) 'input 16'
 
 !     Check that input #17 is integer and fetch it
       m = mxGetM(prhs(17))
@@ -317,36 +317,36 @@ subroutine mexFunction(nlhs, plhs, nrhs, prhs)
       siz = m*n
       thr_pr = mxGetPr(prhs(17))
       call mxCopyPtrToReal8(thr_pr, thr, siz) ! da double precision a reale
-	  if(debu) write(66,*) 'input 17' 
+	  !if(debu) write(66,*) 'input 17' 
 
 ! call the computational subroutine.
       allocate(Matrix_L(Nhh,Nkk))
 	  Matrix_L(1:Nhh,1:Nkk)=0.0d0
-	  if(debu) write(66,*) 'call !' 
+	  !if(debu) write(66,*) 'call !' 
       call fun_L_curledge_curledge(N_volu,N_node,N_edge,nv_max,EV,Matrix_P0, & 
           VP,EV_ind,Neps,n_EV,N_thread,Nhh,Nkk,hhout,kkout,bared,thr,Matrix_L)
-       if(debu) write(66,*) 'matrix created'
+       !if(debu) write(66,*) 'matrix created'
       
       deallocate(EV,EV_ind,Matrix_P0,n_EV,hhout,kkout,bared)
-	  if(debu) write(66,*) 'deallocate'
+	  !if(debu) write(66,*) 'deallocate'
 
 ! Create a matrix for the return argument 1
       mo=Nhh
       no=Nkk
 	  ComplexFlag = 0
       plhs(1) = mxCreateDoubleMatrix(mo, no, ComplexFlag)
-    if(debu) write(66,*) 'I am here1'
+    !if(debu) write(66,*) 'I am here1'
 ! Load the output 1 into a MATLAB array.
       Matrix_L_pr = mxGetPr(plhs(1))
       siz=mo*no
       call mxCopyReal8ToPtr(Matrix_L, Matrix_L_pr, siz)
 
-      if(debu) write(66,*) 'matrix convereted to matlab'
+      !if(debu) write(66,*) 'matrix convereted to matlab'
 
       deallocate(Matrix_L)
       
 	  
-      if(debu) write(66,*) 'closing .txt'
-      if(debu) close(66)
+      !if(debu) write(66,*) 'closing .txt'
+      !if(debu) close(66)
       return
       end
