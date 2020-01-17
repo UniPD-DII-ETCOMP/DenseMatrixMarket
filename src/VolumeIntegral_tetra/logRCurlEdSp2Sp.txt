@@ -1,0 +1,32 @@
+ arguments checked
+ check num
+ input 11
+ input 3
+                  2160
+                     3
+ input 2
+ input 5
+ input 4
+ input 1
+                     6
+                  4690
+ input 6
+                     4
+                  4690
+ input 8
+                     6
+                  4690
+ input 7
+                  4690
+                     1
+                  4690
+ input 9
+                  4690
+ input 10
+ call!
+ matrix created
+ deallocate
+ I am here1
+ I am here2
+ matrix converted for matlab
+ closing lo file, bye bye

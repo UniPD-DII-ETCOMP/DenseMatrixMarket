@@ -93,12 +93,16 @@ hodlroption('threshold',1e-6);
 hssoption('block-size',min(floor(N.cotree/20),100));
 hssoption('compression','qr');
 hssoption('threshold',1e-6);
+hmatrixoption('block-size',min(floor(N.cotree/20),100));
+hmatrixoption('compression','qr');
+hmatrixoption('threshold',1e-6);
 %% SYSTEM in HODLR format
 disp('-------------------------------------------------------------------')
 disp('SYS=R+1j*w*L in HODLR format...')
 nncoeff=0;
 tic
 SYS=hodlr('handle',RLfun,N.cotree,N.cotree); % (in this case ACA is used)
+% SYS=hmatrix('handle',RLfun,N.cotree,N.cotree); % (in this case ACA is used)
 toc
 compr=100*getSize(SYS)/(N.cotree*getSize(RLfun(1,1:N.cotree)));
 disp(['Compression ratio =',num2str(compr),'%'])
