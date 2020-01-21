@@ -37,8 +37,8 @@ MAIN_PEEC_sticks_MF.m is the main file you must run to start the code.
 MAIN_PEEC_sticks_MF_lowrank.m is the main file you must run to start the code coupled with 
                           the low rank compression library https://github.com/numpi/hm-toolbox 
                           based on HODLR and HSS. 
-                          -Download the Matlab HM-toolbox
-						  -Extract it so that the "hm-toolbox-master" directory is at the same level of "test_cases", "fun" and "lowrank"
+                          1) Download the Matlab HM-toolbox
+						  2) Extract it so that the "hm-toolbox-master" directory is at the same level of "test_cases", "fun" and "lowrank".
                           HSS, HODLR, and HMATRIX methods can be used o compress the PEEC matrix.
                           Note that the compression performances are higly problem dependent
                           and the compression may be very poor without a proper reordering 
