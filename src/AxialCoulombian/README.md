@@ -59,4 +59,4 @@ Follow the instuctions given in "README.txt" inside the "test_cases" directory.
 
 Contacts
 -----------------------
-Riccardo Torchio (riccardo.torchio@studenti.unipd.it)
+Riccardo Torchio (riccardo.torchio@unipd.it)

@@ -1,4 +1,4 @@
-Dense Matrix Market: Axiasymmetric code by Riccardo Torchio (riccardo.torchio@studenti.unipd.it)
+Dense Matrix Market: Axiasymmetric code by Riccardo Torchio (riccardo.torchio@unipd.it)
 
 Directories "cond", "ext", and "mag" contains subdirectories with the geometrical data for the test cases
 

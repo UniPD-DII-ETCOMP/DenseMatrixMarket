@@ -1,4 +1,4 @@
-Dense Matrix Market: VolumeIntegral code by Riccardo Torchio (riccardo.torchio@studenti.unipd.it)
+Dense Matrix Market: VolumeIntegral code by Riccardo Torchio (riccardo.torchio@unipd.it)
 -------------------------------------------------------------------------------------------------------
 How to create a new user-defined test-case:
 
