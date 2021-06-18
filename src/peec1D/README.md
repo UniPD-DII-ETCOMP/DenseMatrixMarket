@@ -29,7 +29,7 @@ MAIN_PEEC_sticks_MF.m is the main file you must run to start the code.
                       handle "sys_MF" which allows computing either the full PEEC system 
                       or a generic block of it (or a single entry). 
                       Thus, this code is suitable for the application of 
-                      low-rank compression techniques, e.g: 
+                      low-rank compression techniques, e.g.: 
                       https://github.com/numpi/hm-toolbox
                       https://github.com/klho/FLAM/
                       The varibale "barDoFs" contains the barycenters
