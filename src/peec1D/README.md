@@ -4,6 +4,7 @@ This directory contains a PEEC code, based on stick elements, for the solution o
 
 An optimized, parallel (OpenMP), fortran90 version of this code has been used in
 
+* R. Torchio, "A Volume PEEC Formulation Based on the Cell Method for Electromagnetic Problems From Low to High Frequency," in IEEE Transactions on Antennas and Propagation, vol. 67, no. 12, pp. 7452-7465, Dec. 2019, doi: 10.1109/TAP.2019.2927789. https://ieeexplore.ieee.org/document/8764572
 * [P. Baumgartner, T. Bauernfeind, O. Bíró, A. Hackl, C. Magele, W. Renhart and Riccardo Torchio, "Multi-Objective Optimization of Yagi-Uda Antenna Applying Enhanced Firefly Algorithm With Adaptive Cost Function," in IEEE Transactions on Magnetics. doi: 10.1109/TMAG.2017.2764319](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8168407&isnumber=4479871)
 * [T. Bauernfeind, P. Baumgartner, O. Bíró, A. Hackl, C. Magele, W. Renhart and Riccardo Torchio, "Multi-Objective Synthesis of NFC-Transponder Systems Based on PEEC Method," in IEEE Transactions on Magnetics. doi: 10.1109/TMAG.2017.2771366](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8125565&isnumber=4479871)
 * [R. Torchio, P. Bettini and P. Alotto, "PEEC-Based Analysis of Complex Fusion Magnets During Fast Voltage Transients With H-Matrix Compression," in IEEE Transactions on Magnetics. doi: 10.1109/TMAG.2017.2651638](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7814211&isnumber=7934107)
@@ -35,7 +36,7 @@ MAIN_PEEC_sticks_MF.m is the main file you must run to start the code.
                       related to the Degrees of Freedom, i.e. stick currents (and other lumped circuit currents)
                       
 MAIN_PEEC_sticks_MF_lowrank.m is the main file you must run to start the code coupled with 
-                          the low rank compression library https://github.com/numpi/hm-toolbox 
+                          the low rank compression library https://github.com/UniPD-DII-ETCOMP/hm-toolbox
                           based on HODLR and HSS. 
                           1) Download the Matlab HM-toolbox
 						  2) Extract it so that the "hm-toolbox-master" directory is at the same level of "test_cases", "fun" and "lowrank".

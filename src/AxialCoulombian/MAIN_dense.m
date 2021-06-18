@@ -2,6 +2,7 @@
 clear
 close all
 clc
+restoredefaultpath
 %% BEGIN USER SETTINGS
 % problem definition
 test_case_dir.con = 'test1'; % select source directory for conductive media, set test_case_dir.con = '' to exclude conductive media

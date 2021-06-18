@@ -71,7 +71,7 @@ if plotflag
 [~] = fun_PEEC_1D_plot(U_obj,NN,rho_charge,I_obj,bar_stick,Jrenorm,Jimnorm,G,Jre,Jim);
 end
 %%
-gtoc = toc(gtic) %global TOC
+gtoc = toc(gtic); %global TOC
 %%
  
 

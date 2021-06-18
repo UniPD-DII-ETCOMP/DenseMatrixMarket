@@ -14,9 +14,9 @@ thr=0.3; %threshold for close to far field, set this value greater than the max 
 % END USER SETTINGS
 %% 
 if exist('hm-toolbox-master','dir')
-    cd('hm-toolbox-master'); addpath(pwd); cd ..
+    cd('hm-toolbox-master'); addpath(genpath(pwd)); cd ..
 else
-    error('Download hm-toolbox from https://github.com/numpi/hm-toolbox and extract it') 
+    error('Download hm-toolbox from https://github.com/UniPD-DII-ETCOMP/hm-toolbox and extract it') 
 end
 %% load data
 cd test_cases; cd(test_case_dir); load data.mat; cd ..; cd ..
@@ -90,12 +90,6 @@ disp('-------------------------------------------------------------------')
 hodlroption('block-size',min(floor(N.cotree/20),100));
 hodlroption('compression','qr');
 hodlroption('threshold',1e-6);
-hssoption('block-size',min(floor(N.cotree/20),100));
-hssoption('compression','qr');
-hssoption('threshold',1e-6);
-hmatrixoption('block-size',min(floor(N.cotree/20),100));
-hmatrixoption('compression','qr');
-hmatrixoption('threshold',1e-6);
 %% SYSTEM in HODLR format
 disp('-------------------------------------------------------------------')
 disp('SYS=R+1j*w*L in HODLR format...')
@@ -105,16 +99,16 @@ SYS=hodlr('handle',RLfun,N.cotree,N.cotree); % (in this case ACA is used)
 % SYS=hmatrix('handle',RLfun,N.cotree,N.cotree); % (in this case ACA is used)
 toc
 compr=100*getSize(SYS)/(N.cotree*getSize(RLfun(1,1:N.cotree)));
-disp(['Compression ratio =',num2str(compr),'%'])
+disp(['Compression ratio =',num2str(compr),'%',' -> (size(H-Matrix)/size(full-Matrix)) '])
 disp(['Coefficients evaluation ratio =',num2str(100*nncoeff/(N.cotree^2)),'%'])
 disp('... done!')
 disp('-------------------------------------------------------------------')
 %%
 figure
 spy(SYS)
-drawnow
 axis equal
 title('ranks')
+drawnow
 %%
 disp('-------------------------------------------------------------------')
 disp('solving...')

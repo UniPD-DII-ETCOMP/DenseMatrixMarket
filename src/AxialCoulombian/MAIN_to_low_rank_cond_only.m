@@ -2,11 +2,12 @@
 clear
 close all
 clc
+restoredefaultpath
 %%
 if exist('hm-toolbox-master','dir')
-    cd('hm-toolbox-master'); addpath(pwd); cd ..
+    cd('hm-toolbox-master'); addpath(genpath(pwd)); cd ..
 else
-    error('Download hm-toolbox from https://github.com/numpi/hm-toolbox and extract it') 
+    error('Download hm-toolbox from https://github.com/UniPD-DII-ETCOMP/hm-toolbox and extract it') 
 end
 %% BEGIN USER SETTINGS
 % problem definition
@@ -66,9 +67,6 @@ disp('-------------------------------------------------------------------')
 hodlroption('block-size',100);
 hodlroption('compression','qr');
 hodlroption('threshold',1e-4);
-hssoption('block-size',100);
-hssoption('compression','qr');
-hssoption('threshold',1e-4);
 disp('R matrix to hodlr/hss...')
 tic
 HR=hodlr('diagonal',Rcdiag);
@@ -78,7 +76,7 @@ tic
 HL=hodlr('handle',Lfun,N.face_con,N.face_con);
 toc
 compr=100*getSize(HL)/(N.face_con*getSize(Lfun(1,1:N.face_con)));
-disp(['Compression ratio perc. =',num2str(compr),'%'])
+disp(['Compression ratio perc. =',num2str(compr),'%',' -> (size(H-Matrix)/size(full-Matrix)) '])
 %% SOLVING
 disp('-------------------------------------------------------------------')
 disp('Solving ...')

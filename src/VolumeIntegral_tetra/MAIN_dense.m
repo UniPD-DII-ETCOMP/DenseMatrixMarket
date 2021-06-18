@@ -1,6 +1,7 @@
 clear
 close all
 clc
+restoredefaultpath
 %% BEGIN USER SETTINGS
 test_case_dir = 'test_spherical_shell_from_user';
 f = 50;% Hz

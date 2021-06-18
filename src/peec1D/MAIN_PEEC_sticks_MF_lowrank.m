@@ -1,11 +1,12 @@
 clc
 clear
 close all
+restoredefaultpath
 %%
 if exist('hm-toolbox-master','dir')
-    cd('hm-toolbox-master'); addpath(pwd); cd ..
+    cd('hm-toolbox-master'); addpath(genpath(pwd)); cd ..
 else
-    error('Download hm-toolbox from https://github.com/numpi/hm-toolbox and extract it') 
+    error('Download hm-toolbox from https://github.com/UniPD-DII-ETCOMP/hm-toolbox and extract it') 
 end
 %% BEGIN USER SETTINGS
 % problem definition
@@ -53,24 +54,17 @@ disp('...done!') % N.B.: system M is not forced to be symmetric
 disp('------------------------------------')
 %%
 disp('------------------------------------')
-hssoption('block-size',floor((nSticks+N.vol_sou+N.node_app)/10));
-hssoption('compression','svd');
-hssoption('threshold',1e-6);
 hodlroption('block-size',floor((nSticks+N.vol_sou+N.node_app)/10));
-hodlroption('compression','svd'); %hodlr with 'handle' uses ACA
+hodlroption('compression','svd');
 hodlroption('threshold',1e-6);
-hmatrixoption('block-size',floor((nSticks+N.vol_sou+N.node_app)/10));
-hmatrixoption('compression','svd'); %hmatrix with 'handle' uses ACA
-hmatrixoption('threshold',1e-4);
 %
-disp('build HSS/HODLR/HMATRIX matrix')
+disp('build H-MATRIX matrix')
 tic
-H=hmatrix('handle',sys_MF,nSticks+N.vol_sou+N.node_app,nSticks+N.vol_sou+N.node_app); % decomment for use hodlr 
-% H=hodlr('handle',sys_MF,nSticks+N.vol_sou+N.node_app,nSticks+N.vol_sou+N.node_app); % decomment for use hodlr 
+H=hodlr('handle',sys_MF,nSticks+N.vol_sou+N.node_app,nSticks+N.vol_sou+N.node_app); % decomment for use hodlr 
 toc
 %
 compr=100*getSize(H)/((nSticks+N.vol_sou+N.node_app)^2*16);
-disp(['Compression ratio HSS/HODLR =',num2str(compr),'%'])
+disp(['Compression ratio HSS/HODLR =',num2str(compr),'%',' -> (size(H-Matrix)/size(full-Matrix)) '])
 %
 figure
 spy(H)
@@ -87,7 +81,7 @@ disp('------------------------------------')
 disp('------------------------------------')
 disp('Build full system M from matrix-free function "sys_MF"...')
 tic 
-   M=sys_MF(1:nSticks+N.vol_sou+N.node_app,1:nSticks+N.vol_sou+N.node_app);                        
+M=sys_MF(1:nSticks+N.vol_sou+N.node_app,1:nSticks+N.vol_sou+N.node_app);                        
 toc
 disp('...done!')
 disp('------------------------------------')
