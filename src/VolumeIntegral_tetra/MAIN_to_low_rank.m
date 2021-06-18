@@ -1,6 +1,7 @@
 clear
 close all
 clc
+restoredefaultpath
 %% BEGIN USER SETTINGS 
 % N.B. non-simply connected domains are not supported, cavities are supported 
 test_case_dir = 'test2';
