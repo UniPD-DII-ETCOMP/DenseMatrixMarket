@@ -8,7 +8,7 @@ P=zeros(length(hhout),length(kk));
 % return
 for hhh=1:length(hhout)
     hh=hhout(hhh);
-    ne_cap_hh=Cap_Elem(1,hh); % numero di elementi del nofor hh
+    ne_cap_hh=Cap_Elem(1,hh); % 
     ll_tot_hh=ll_tot_xx(hh).';
 %     kk=hh+1:nNodes;
        len_zz=length(kk);
@@ -18,7 +18,7 @@ for hhh=1:length(hhout)
           PPg_jj=PPg_xx(1:3,1:npg,jj,hh);
           ll_jj=ll_xx(jj,hh); 
           for ii = 1:ne_cap_max
-             NN_ii1 = reshape(NN_xx1(1:3,ii,kk),3,len_zz); %costruisco il ii-esimo elemento capacitivo (nofor kk e lato induttivo ii)
+             NN_ii1 = reshape(NN_xx1(1:3,ii,kk),3,len_zz); %
              NN_ii2 = reshape(NN_xx2(1:3,ii,kk),3,len_zz);%NN(1:3,kk);
              ll_ii=ll_xx(ii,kk);		 
 			 integ_mutual=0.0;
@@ -31,14 +31,15 @@ for hhh=1:length(hhout)
 		  %glob_P=glob_P+P_mutual_jj_ii
 	   end   
 	   P(hhh,1:length(kk))=P_mutual_jj_ii./(ll_tot_kk*ll_tot_hh);
-       hhh=hhh+1;
+%        hhh=hhh+1;
 %     end
 end
 %% self P
 [C,IA,IB] = intersect(hhout,kk);
 hhh=1;
 if ~isempty(C)
-for hh=C(1):C(end)
+for hhhh=1:length(C)%C(1):C(end)
+    hh=C(hhhh);
     ne_cap_hh=Cap_Elem(1,hh);
     idE_hh=Cap_Elem(2:ne_cap_max+1,hh);
     P_self_jj_jj=0.0d0;
@@ -70,7 +71,11 @@ for hh=C(1):C(end)
             P_self_jj_ii=P_self_jj_ii+0.5*ll_jj*integ_self;
         end 
     end 
+%     try 
 	P(IA(hhh),IB(hhh))=(P_self_jj_jj+2*P_self_jj_ii)/(ll_tot_hh^2);
+%     catch
+%        ah 
+%     end
     hhh=hhh+1;
 end
 end

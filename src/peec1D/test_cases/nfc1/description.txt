@@ -1,2 +1,4 @@
 Problem description:
 NFC antenna fed by two opposite sign current sources.
+Ordering of the DoFs is not suited for H-matrix compression. 
+A reordering should be performed.  

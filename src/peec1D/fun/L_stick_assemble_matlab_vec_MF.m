@@ -40,7 +40,8 @@ L=1.0d-7*0.5*L;
 [C,IA,IB] = intersect(hhout,kk);
 hhh=1;
 if ~isempty(C)
-    for hh=C(1):C(end)
+    for hhhh=1:length(C)%C(1):C(end)
+        hh=C(hhhh);
     %self-inductance
         ll_h=ll_htot(hh);
         aa=log(ll_h/radius(hh)+sqrt((ll_h/radius(hh))^2+1));

@@ -3,7 +3,7 @@ clear
 close all
 %% BEGIN USER SETTINGS
 % problem definition
-test_case_dir = 'line1';
+test_case_dir = 'nfc1';
 plotflag = 1; %graphics postprocessing flag (1 = yes, 0 = no)
 freq = 3*3e0; % set the value of the frequency [Hz]
 radius = 0.1e-3; % set the radius of the wires  [m]

@@ -61,10 +61,11 @@ hodlroption('threshold',1e-6);
 disp('build H-MATRIX matrix')
 tic
 H=hodlr('handle',sys_MF,nSticks+N.vol_sou+N.node_app,nSticks+N.vol_sou+N.node_app); % decomment for use hodlr 
+H=hodlr('handle',@(ii,jj) M(ii,jj),nSticks+N.vol_sou+N.node_app,nSticks+N.vol_sou+N.node_app); % decomment for use hodlr 
 toc
 %
 compr=100*getSize(H)/((nSticks+N.vol_sou+N.node_app)^2*16);
-disp(['Compression ratio HSS/HODLR =',num2str(compr),'%',' -> (size(H-Matrix)/size(full-Matrix)) '])
+disp(['Compression ratio H-MATRIX =',num2str(compr),'%',' -> (size(H-Matrix)/size(full-Matrix)) '])
 %
 figure
 spy(H)
@@ -72,7 +73,7 @@ axis equal
 title('rank of off-diagonal blocks')
 drawnow
 %
-disp('Solution HSS/HODLR')
+disp('Solution H-MATRIX')
 tic
 x_fromHSS = H\b; 
 toc
