@@ -60,8 +60,7 @@ hodlroption('threshold',1e-6);
 %
 disp('build H-MATRIX matrix')
 tic
-H=hodlr('handle',sys_MF,nSticks+N.vol_sou+N.node_app,nSticks+N.vol_sou+N.node_app); % decomment for use hodlr 
-H=hodlr('handle',@(ii,jj) M(ii,jj),nSticks+N.vol_sou+N.node_app,nSticks+N.vol_sou+N.node_app); % decomment for use hodlr 
+H=hodlr('handle',sys_MF,nSticks+N.vol_sou+N.node_app,nSticks+N.vol_sou+N.node_app); 
 toc
 %
 compr=100*getSize(H)/((nSticks+N.vol_sou+N.node_app)^2*16);
